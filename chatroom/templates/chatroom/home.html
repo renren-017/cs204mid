@@ -1,7 +1,7 @@
 {% extends 'chatroom/base.html' %}
 {% load crispy_forms_tags %}
 {% block content %}
-  <div  data-spy="scroll">
+  <div data-spy="scroll">
     {% for text_message in text_messages %}
     <div class="card mt-2">
       <div class="card-body">
@@ -13,7 +13,7 @@
     {% endfor %}
   </div>
 
-    <div class="footer mt-auto bg-light">
+    <div class="footer position-fixed mt-auto bg-light">
       <div class="container">
           <form method="post">
               {% csrf_token %}
