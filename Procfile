@@ -1,0 +1,1 @@
+web: gunicorn cs204mid.wsgi
