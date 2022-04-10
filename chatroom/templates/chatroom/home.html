@@ -1,7 +1,7 @@
 {% extends 'chatroom/base.html' %}
 {% load crispy_forms_tags %}
 {% block content %}
-  <div data-spy="scroll">
+  <div data-spy="scroll" class="mb-10">
     {% for text_message in text_messages %}
     <div class="card mt-2">
       <div class="card-body">
