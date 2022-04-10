@@ -1,0 +1,27 @@
+{% extends 'chatroom/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    {% for text_message in text_messages %}
+    <div class="card mt-2">
+      <div class="card-body">
+        <h5 class="card-title"> {{ text_message.username }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{ text_message.posted_on|date:"f a, N j" }}</h6>
+        <p class="card-text">{{ text_message.content }}</p>
+      </div>
+    </div>
+    {% endfor %}
+
+    <div class="footer mt-auto bg-light">
+      <div class="container">
+          <form method="post">
+              {% csrf_token %}
+              <fieldset class="form-group">
+                {{ form|crispy }}
+              </fieldset>
+              <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Submit</button>
+              </div>
+          </form>
+      </div>
+    </div>
+{% endblock content %}
