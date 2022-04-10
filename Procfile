@@ -1,3 +1,1 @@
-web: waitress-serve \
-    --listen "*:8000" \
-    cs204mid:wsgifunc
+web: gunicorn cs204mid.wsgi
