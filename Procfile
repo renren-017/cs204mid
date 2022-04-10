@@ -1,1 +1,1 @@
-web: gunicorn cs204mid.wsgi
+waitress-serve --listen=*:8000 cs203mid.wsgi:application
